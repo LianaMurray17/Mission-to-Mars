@@ -30,7 +30,7 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars = mongo.db.mars
-    mars_data = mission_to_mars.scrape_all()
+    mars_data = scrape.scrape_all()
     mars.update({}, mars_data, upsert=True)
     return "Scraping Completed"
     
